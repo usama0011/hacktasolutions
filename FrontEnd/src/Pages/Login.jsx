@@ -21,7 +21,10 @@ const LoginPage = () => {
     try {
       const res = await axios.post(
         "https://hacktasolutions-server.vercel.app/api/auth/login",
-        values
+        values,
+        {
+          withCredentials: true,
+        }
       );
       const token = res.data.token;
       localStorage.setItem("token", token); // Store token in local storage
