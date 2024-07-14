@@ -20,7 +20,7 @@ const LoginPage = () => {
   const onFinish = async (values) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://hacktasolutions-server.vercel.app/api/auth/login",
         values
       );
       const token = res.data.token;

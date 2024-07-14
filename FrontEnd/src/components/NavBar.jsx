@@ -58,7 +58,7 @@ const Navbar = () => {
     console.log("values", values);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/create-user",
+        "https://hacktasolutions-server.vercel.app/api/auth/create-user",
         values,
         {
           withCredentials: true,
