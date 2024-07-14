@@ -45,6 +45,9 @@ const Navbar = () => {
       },
     });
   };
+  const handleLogin = () => {
+    navigation("/login");
+  };
 
   const handleAddUser = () => {
     setShowAddUserModal(true);
@@ -133,6 +136,9 @@ const Navbar = () => {
               onClick={handleLogout}
             >
               Logout
+            </Button>
+            <Button type="text" icon={<LogoutOutlined />} onClick={handleLogin}>
+              Login
             </Button>
             <Button
               className="menu-icon"
