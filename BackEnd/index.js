@@ -11,12 +11,17 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-const corsOptions = {
-  origin: "*", // Allow requests from any origin
-  credentials: true, // Allow cookies to be sent
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: [
+      "https://hacktasolutions-ain42dyuh-usman-ahmads-projects-93615401.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
+app.options("*", cors());
 connectDB();
 
 // Routes
